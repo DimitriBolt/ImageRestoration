@@ -16,7 +16,7 @@ function msd = calculate_msd(f, lambda, epsilon)
 %                   MSD(k, l) corresponds to LAMBDA(k) and EPSILON(l).
 %
 %   Notes:
-%   - Calls smooth_image_rof to get the restored image U. [cite: 24]
+%   - Calls smooth_image_rof to get the restored image U.
 %   - Handles GPU/CPU execution based on smooth_image_rof's behavior.
 
     [H, W] = size(f);
@@ -61,7 +61,7 @@ function msd = calculate_msd(f, lambda, epsilon)
             % Calculate squared difference sum
             sum_sq_diff = sum(diff(:).^2);
 
-            % Calculate MSD [cite: 18, 127]
+            % Calculate MSD
             msd(k,l) = sqrt(sum_sq_diff / (H * W));
         end
     end
